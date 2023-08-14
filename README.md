@@ -1,0 +1,1 @@
+# technology-templates-nodejs-serverless-multi-asset
