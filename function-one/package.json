@@ -1,0 +1,20 @@
+{
+  "name": "serverless-template-example-function-one",
+  "version": "1.0.0",
+  "description": "Serverless Template Example Function One",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nullplatform/technology-templates-nodejs-serverless-multi-asset.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nullplatform/technology-templates-nodejs-serverless-multi-asset/issues"
+  },
+  "homepage": "https://github.com/nullplatform/technology-templates-nodejs-serverless-multi-asset#readme",
+  "dependencies": {}
+}
