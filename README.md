@@ -1,4 +1,12 @@
-# Technology Template for Node.js Serverless Multi-Asset Application
+<h2 align="center">
+    <a href="https://httpie.io" target="blank_">
+        <img height="100" alt="nullplatform" src="https://nullplatform.com/favicon/android-chrome-192x192.png" />
+    </a>
+    <br>
+    <br>
+    Technology Template for Node.js Serverless Multi-Asset Application
+    <br>
+</h2>
 
 Welcome to the **Node.js Serverless Multi-Asset** example repository! This repository provides a demonstration of how to create and deploy two separate AWS Lambda functions using Node.js.
 
