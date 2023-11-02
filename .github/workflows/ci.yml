@@ -72,13 +72,13 @@ jobs:
       status: ${{ contains(fromJSON('["failure", "cancelled"]'), job.status) && 'failed' || 'successful' }}
   finalize:
     runs-on: ubuntu-latest
-    needs: build
+    if: ${{ always() && needs.prepare.outputs.build-id }}
+    needs: [prepare, build]
     steps:
       - name: End Nullplatform CI
-        if: ${{ always() }}
         id: end-setup-ci
         uses: nullplatform/github-action-setup-ci@v1
         with:
           api-key: ${{ secrets.NULLPLATFORM_API_KEY }}
-          build-id: ${{ needs.build.outputs.build-id }}
-          status: ${{ needs.build.outputs.status }}
+          build-id: ${{ needs.prepare.outputs.build-id }}
+          status: ${{ needs.build.outputs.status || 'failed' }}
