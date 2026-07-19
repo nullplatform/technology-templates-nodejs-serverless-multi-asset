@@ -36,6 +36,15 @@ definitions:
           # `make package` needs zip, which node:18 does not ship.
           - apt-get update && apt-get install -y --no-install-recommends zip
           - np build start
+          # Build parameters: on GitHub the "Get build parameters" step
+          # (nullplatform/github-action-secrets-and-variables) exports this application's
+          # nullplatform parameters as env vars before the build. The registry ones
+          # (BUILD_AWS_*, BUILD_DOCKER_*) are fetched internally by `np asset push`, which
+          # already runs in the loop below, so they need no handling here. Any parameter
+          # the build itself reads from the environment (via `npm test`/compile) should be
+          # set as a SECURED repository variable on Bitbucket, the same way
+          # NULLPLATFORM_API_KEY is: Bitbucket injects every repository variable into the
+          # step env, and it flows through to `make` and its npm children below unchanged.
           - |
             # `set -e` is required: without it a failing make/np inside the loop would be
             # swallowed and the pipeline would report success on a broken build.
